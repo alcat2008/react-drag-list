@@ -3,8 +3,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import ReactDraggableList from '../src/';
-import 'react-draggable-list/assets/index.less';
+import ReactDragList from '../src/';
+import 'react-drag-list/assets/index.less';
 
 import './style/simple.less';
 
@@ -35,7 +35,7 @@ class Simple extends React.Component {
   render() {
     return (
       <div className="simple">
-        <ReactDraggableList
+        <ReactDragList
           dataSource={dataArray}
           row={(record, index) => (
             <div key={index} style={{ color: record.color }}>

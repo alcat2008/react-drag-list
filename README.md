@@ -1,4 +1,4 @@
-# react-draggable-list
+# react-drag-list
 ---
 
 React DraggableList Component
@@ -10,18 +10,18 @@ React DraggableList Component
 [![gemnasium deps][gemnasium-image]][gemnasium-url]
 [![npm download][download-image]][download-url]
 
-[npm-image]: http://img.shields.io/npm/v/react-draggable-list.svg?style=flat-square
-[npm-url]: http://npmjs.org/package/react-draggable-list
-[travis-image]: https://img.shields.io/travis/react-component/react-draggable-list.svg?style=flat-square
-[travis-url]: https://travis-ci.org/react-component/react-draggable-list
-[coveralls-image]: https://img.shields.io/coveralls/react-component/react-draggable-list.svg?style=flat-square
-[coveralls-url]: https://coveralls.io/r/react-component/react-draggable-list?branch=master
-[gemnasium-image]: http://img.shields.io/gemnasium/react-component/react-draggable-list.svg?style=flat-square
-[gemnasium-url]: https://gemnasium.com/react-component/react-draggable-list
+[npm-image]: http://img.shields.io/npm/v/react-drag-list.svg?style=flat-square
+[npm-url]: http://npmjs.org/package/react-drag-list
+[travis-image]: https://img.shields.io/travis/alcat2008/react-drag-list.svg?style=flat-square
+[travis-url]: https://travis-ci.org/alcat2008/react-drag-list
+[coveralls-image]: https://img.shields.io/coveralls/alcat2008/react-drag-list.svg?style=flat-square
+[coveralls-url]: https://coveralls.io/r/alcat2008/react-drag-list?branch=master
+[gemnasium-image]: http://img.shields.io/gemnasium/alcat2008/react-drag-list.svg?style=flat-square
+[gemnasium-url]: https://gemnasium.com/alcat2008/react-drag-list
 [node-image]: https://img.shields.io/badge/node.js-%3E=_0.10-green.svg?style=flat-square
 [node-url]: http://nodejs.org/download/
-[download-image]: https://img.shields.io/npm/dm/react-draggable-list.svg?style=flat-square
-[download-url]: https://npmjs.org/package/react-draggable-list
+[download-image]: https://img.shields.io/npm/dm/react-drag-list.svg?style=flat-square
+[download-url]: https://npmjs.org/package/react-drag-list
 
 
 ## Screenshots
@@ -43,22 +43,22 @@ npm start
 http://localhost:8000/examples/
 
 
-online example: http://front-ender.me/react-draggable-list/
+online example: http://front-ender.me/react-drag-list/
 
 
 ## install
 
 
-[![react-draggable-list](https://nodei.co/npm/react-draggable-list.png)](https://npmjs.org/package/react-draggable-list)
+[![react-drag-list](https://nodei.co/npm/react-drag-list.png)](https://npmjs.org/package/react-drag-list)
 
 
 ## Usage
 
 ```js
-var ReactDraggableList = require('react-draggable-list');
+var ReactDragList = require('react-drag-list');
 var React = require('react');
 React.render(
-  <ReactDraggableList
+  <ReactDragList
     dataSource={['row1', 'row2', 'row3']}
     row={(record, index) => <div>index + record</div>}
   />, container);
@@ -100,4 +100,4 @@ open coverage/ dir
 
 ## License
 
-react-draggable-list is released under the MIT license.
+react-drag-list is released under the MIT license.

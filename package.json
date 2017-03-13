@@ -1,20 +1,19 @@
 {
-  "name": "react-draggable-list",
-  "version": "1.0.0",
-  "description": "react-draggable-list ui component for react",
+  "name": "react-drag-list",
+  "version": "1.0.1",
+  "description": "drag list ui component for react",
   "keywords": [
     "react",
     "react-component",
-    "react-react-draggable-list",
-    "react-draggable-list"
+    "react-drag-list"
   ],
   "engines": {
     "node": ">=4.0.0"
   },
-  "homepage": "https://github.com/react-component/react-draggable-list",
+  "homepage": "https://github.com/alcat2008/react-drag-list",
   "author": "ge_yangyang@126.com",
-  "repository": "react-component/react-draggable-list",
-  "bugs": "https://github.com/react-component/react-draggable-list/issues",
+  "repository": "alcat2008/react-drag-list",
+  "bugs": "https://github.com/alcat2008/react-drag-list/issues",
   "files": [
     "lib",
     "assets/*.css"
