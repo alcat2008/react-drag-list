@@ -12,11 +12,15 @@
   },
   "homepage": "https://github.com/alcat2008/react-drag-list",
   "author": "ge_yangyang@126.com",
-  "repository": "alcat2008/react-drag-list",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alcat2008/react-drag-list.git"
+  },
   "bugs": "https://github.com/alcat2008/react-drag-list/issues",
   "files": [
     "lib",
-    "assets/*.css"
+    "assets/*.css",
+    "assets/*.less"
   ],
   "license": "MIT",
   "main": "./lib/index",
