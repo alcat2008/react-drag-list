@@ -68,25 +68,20 @@ React.render(
 
 ### props
 
-<table class="table table-bordered table-striped">
-    <thead>
-    <tr>
-        <th style="width: 100px;">name</th>
-        <th style="width: 50px;">type</th>
-        <th style="width: 50px;">default</th>
-        <th>description</th>
-    </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>className</td>
-          <td>String</td>
-          <td></td>
-          <td>additional css class of root dom node</td>
-        </tr>
-    </tbody>
-</table>
-
+Name               | Type                | Default | Description
+------------------ | ------------------- | ------- | ------------------------------------------------------------------------------
+prefixCls          | string              | rc-draggable-list | The draggable list dom node's prefixCls
+className          | string              |         | additional className for draggable list
+style              | object              |         | Root style for draggable list element. Such as width, height
+rowClassName       | string              |         | additional className for draggable list row item
+dataSource         | any[]               |         | data record array to be rendered
+row                | function(record, index): ReactNode    |         | row data to be rendered
+handles            | boolean             | false   | show drag handles
+animation          | string              | 150     | ms, animation speed moving items when sorting, `0` — without animation
+onUpdate           | function(event: Object)  |         | called when sorting list changed
+ghostClass         | string              |         | additional className for the drop placeholder
+chosenClass        | string              |         | additional className for the chosen item
+dragClass          | string              |         | additional className for the dragging item
 
 ## Test Case
 
