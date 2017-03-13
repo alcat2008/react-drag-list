@@ -43,7 +43,7 @@ npm start
 http://localhost:8000/examples/
 
 
-online example: http://react-component.github.io/react-draggable-list/
+online example: http://front-ender.me/react-draggable-list/
 
 
 ## install
@@ -57,7 +57,11 @@ online example: http://react-component.github.io/react-draggable-list/
 ```js
 var ReactDraggableList = require('react-draggable-list');
 var React = require('react');
-React.render(<ReactDraggableList />, container);
+React.render(
+  <ReactDraggableList
+    dataSource={['row1', 'row2', 'row3']}
+    row={(record, index) => <div>index + record</div>}
+  />, container);
 ```
 
 ## API
