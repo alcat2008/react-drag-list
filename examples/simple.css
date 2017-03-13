@@ -1,0 +1,40 @@
+.rc-draggable-list-draggableRow {
+  cursor: move;
+}
+.rc-draggable-list-handles {
+  margin-right: 10px;
+  font: bold 20px Sans-Serif;
+  color: #5F9EDF;
+  display: inline-block;
+}
+.rc-draggable-list-ghost {
+  opacity: .2;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.simple {
+  position: relative;
+  background-image: -webkit-linear-gradient(top, #F4E2C9 20%, #F4D7C9 100%);
+  background-image: linear-gradient(to bottom, #F4E2C9 20%, #F4D7C9 100%);
+}
+.simple-drag {
+  margin: 40px auto;
+  padding: 10px;
+  max-width: 350px;
+  width: 90%;
+}
+.simple-drag-row {
+  background: #fff;
+  border-radius: 6px;
+  margin: 5px auto;
+  padding: 10px;
+  -webkit-transition: box-shadow 0.5s, -webkit-transform 0.5s;
+  transition: box-shadow 0.5s, -webkit-transform 0.5s;
+  transition: box-shadow 0.5s, transform 0.5s;
+  transition: box-shadow 0.5s, transform 0.5s, -webkit-transform 0.5s;
+}
+.simple-drag-row-title {
+  font-weight: bold;
+  font-size: large;
+}
+
+/*# sourceMappingURL=simple.css.map*/
