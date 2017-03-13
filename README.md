@@ -23,12 +23,6 @@ React DraggableList Component
 [download-image]: https://img.shields.io/npm/dm/react-drag-list.svg?style=flat-square
 [download-url]: https://npmjs.org/package/react-drag-list
 
-
-## Screenshots
-
-<img src="" width="288"/>
-
-
 ## Development
 
 ```
