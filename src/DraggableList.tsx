@@ -65,7 +65,7 @@ export default class DraggableList extends React.Component<DraggableListProps, a
         <div ref={this._sortableGroupDecorator}>
           {dataSource.map((record, index) => (
             <div key={index} className={classNames(`${prefixCls}-draggableRow`, rowClassName)}>
-              {handles && (<span class={`${prefixCls}-handles`}>&#9776;</span>)}
+              {handles && (<span className={`${prefixCls}-handles`}>&#9776;</span>)}
               {row(record, index)}
             </div>
           ))}
