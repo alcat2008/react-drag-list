@@ -13,7 +13,6 @@
 }
 .simple {
   position: relative;
-  background-image: -webkit-linear-gradient(top, #F4E2C9 20%, #F4D7C9 100%);
   background-image: linear-gradient(to bottom, #F4E2C9 20%, #F4D7C9 100%);
 }
 .simple-drag {
@@ -27,10 +26,7 @@
   border-radius: 6px;
   margin: 5px auto;
   padding: 10px;
-  -webkit-transition: box-shadow 0.5s, -webkit-transform 0.5s;
-  transition: box-shadow 0.5s, -webkit-transform 0.5s;
   transition: box-shadow 0.5s, transform 0.5s;
-  transition: box-shadow 0.5s, transform 0.5s, -webkit-transform 0.5s;
 }
 .simple-drag-row-title {
   font-weight: bold;
