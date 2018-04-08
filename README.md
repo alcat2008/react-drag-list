@@ -49,8 +49,9 @@ online example: http://front-ender.me/react-drag-list/
 ## Usage
 
 ```js
-var ReactDragList = require('react-drag-list');
-var React = require('react');
+import React from 'react'
+import ReactDragList from 'react-drag-list'
+
 React.render(
   <ReactDragList
     dataSource={['row1', 'row2', 'row3']}
@@ -70,6 +71,7 @@ style              | object              |         | Root style for draggable li
 rowClassName       | string              |         | additional className for draggable list row item
 dataSource         | any[]               |         | data record array to be rendered
 row                | function(record, index): ReactNode    |         | row data to be rendered
+disabled           | boolean             | false   | disables the drag if set to true
 handles            | boolean             | false   | show drag handles
 animation          | string              | 150     | ms, animation speed moving items when sorting, `0` — without animation
 onUpdate           | function(event: Object)  |         | called when sorting list changed

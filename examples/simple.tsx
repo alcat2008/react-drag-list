@@ -32,6 +32,10 @@ const dataArray = [
 ];
 
 class Simple extends React.Component {
+  _handleUpdate = evt => {
+    console.log(evt); // tslint:disable-line
+  }
+
   render() {
     return (
       <div className="simple">
@@ -46,6 +50,7 @@ class Simple extends React.Component {
           handles={false}
           className="simple-drag"
           rowClassName="simple-drag-row"
+          onUpdate={this._handleUpdate}
         />
       </div>
     );
