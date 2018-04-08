@@ -74,7 +74,7 @@ export default class DraggableList extends React.Component<IDraggableListProps, 
                 cursor: disabled ? 'default' : 'move',
               }}
             >
-              {(!disabled) && handles && (<span class={`${prefixCls}-handles`}>&#9776;</span>)}
+              {(!disabled) && handles && (<span className={`${prefixCls}-handles`}>&#9776;</span>)}
               {row(record, index)}
             </div>
           ))}
