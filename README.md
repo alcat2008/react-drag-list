@@ -70,6 +70,7 @@ className          | string              |         | additional className for dr
 style              | object              |         | Root style for draggable list element. Such as width, height
 rowClassName       | string              |         | additional className for draggable list row item
 dataSource         | any[]               |         | data record array to be rendered
+rowKey             | string              |         | key of row to be rendered
 row                | function(record, index): ReactNode    |         | row data to be rendered
 disabled           | boolean             | false   | disables the drag if set to true
 handles            | boolean             | false   | show drag handles

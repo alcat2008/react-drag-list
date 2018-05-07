@@ -32,15 +32,28 @@ const dataArray = [
 ];
 
 class Simple extends React.Component {
-  _handleUpdate = evt => {
+  state = {
+    dataSource: dataArray,
+  };
+
+  _handleUpdate = (evt, updated) => {
     console.log(evt); // tslint:disable-line
+    console.log(updated); // tslint:disable-line
+    // this.setState({
+    //   dataSource: [...updated, {
+    //     color: '#FFAA00',
+    //     title: 'Added Engineer',
+    //     text: 'Added Engineer',
+    //   }]
+    // })
   }
 
   render() {
     return (
       <div className="simple">
         <ReactDragList
-          dataSource={dataArray}
+          dataSource={this.state.dataSource}
+          rowKey="title"
           row={(record, index) => (
             <div key={index} style={{ color: record.color }}>
               <div className="simple-drag-row-title">{record.title}</div>
