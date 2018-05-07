@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>simple.js - example - react-drag-list@1.0.6</title>
+  <title>simple.js - example - react-drag-list@1.1.0</title>
   <meta name="viewport"
         content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
   <meta charset="utf-8"/>
@@ -263,7 +263,7 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
 <body>
   <div class="container">
     <div class="header">
-      <h1>react-drag-list@1.0.6</h1>
+      <h1>react-drag-list@1.1.0</h1>
 
       <p>drag list ui component for react</p>
     </div>
@@ -303,15 +303,28 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
 ];
 
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Simple</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
-  _handleUpdate = evt =&gt; {
+  state = {
+    dataSource: dataArray,
+  };
+
+  _handleUpdate = (evt, updated) =&gt; {
     <span class="hljs-built_in">console</span>.log(evt); <span class="hljs-comment">// tslint:disable-line</span>
+    <span class="hljs-built_in">console</span>.log(updated); <span class="hljs-comment">// tslint:disable-line</span>
+    <span class="hljs-comment">// this.setState({</span>
+    <span class="hljs-comment">//   dataSource: [...updated, {</span>
+    <span class="hljs-comment">//     color: '#FFAA00',</span>
+    <span class="hljs-comment">//     title: 'Added Engineer',</span>
+    <span class="hljs-comment">//     text: 'Added Engineer',</span>
+    <span class="hljs-comment">//   }]</span>
+    <span class="hljs-comment">// })</span>
   }
 
   render() {
     <span class="hljs-keyword">return</span> (
       <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"simple"</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">ReactDragList</span>
-          <span class="hljs-attribute">dataSource</span>=<span class="hljs-value">{dataArray}</span>
+          <span class="hljs-attribute">dataSource</span>=<span class="hljs-value">{this.state.dataSource}</span>
+          <span class="hljs-attribute">rowKey</span>=<span class="hljs-value">"title"</span>
           <span class="hljs-attribute">row</span>=<span class="hljs-value">{(record,</span> <span class="hljs-attribute">index</span>) =&gt;</span> (
             <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">{index}</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">{{</span> <span class="hljs-attribute">color:</span> <span class="hljs-attribute">record.color</span> }}&gt;</span>
               <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">"simple-drag-row-title"</span>&gt;</span>{record.title}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
