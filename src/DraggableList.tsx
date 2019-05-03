@@ -46,7 +46,15 @@ export default class DraggableList extends React.Component<IDraggableListProps, 
   _sortableGroupDecorator = (componentBackingInstance) => {
     // check if backing instance not null
     if (componentBackingInstance) {
-      const { animation, onUpdate, prefixCls, ghostClass, chosenClass, dragClass, disabled } = this.props;
+      const {
+        animation,
+        onUpdate,
+        prefixCls,
+        ghostClass,
+        chosenClass,
+        dragClass,
+        disabled,
+      } = this.props;
       // const ghostClass = ;
       const options = {
         disabled,
@@ -54,24 +62,36 @@ export default class DraggableList extends React.Component<IDraggableListProps, 
         draggable: `.${prefixCls}-draggableRow`, // Specifies which items inside the element should be sortable
         // group: "shared",
         ghostClass: ghostClass || `${prefixCls}-ghost`, // Class name for the drop placeholder
-        chosenClass: chosenClass || `${prefixCls}-chosen`,  // Class name for the chosen item
-        dragClass: dragClass || `${prefixCls}-drag`,  // Class name for the dragging item
+        chosenClass: chosenClass || `${prefixCls}-chosen`, // Class name for the chosen item
+        dragClass: dragClass || `${prefixCls}-drag`, // Class name for the dragging item
         onUpdate: (evt) => {
           const { newIndex, oldIndex } = evt;
           let updated = this._current;
           let rowData = updated.splice(oldIndex, 1);
           updated.splice(newIndex, 0, rowData[0]);
           this._current = updated;
-          onUpdate && onUpdate(evt, updated);  // tslint:disable-line
+          onUpdate && onUpdate(evt, updated); // tslint:disable-line
         },
       };
       Sortable.create(componentBackingInstance, options);
     }
-  }
+  };
 
   render() {
-    const { style, className, rowKey, rowClassName, prefixCls, dataSource, row, handles, disabled } = this.props;
-    this._current = dataSource;
+    const {
+      style,
+      className,
+      rowKey,
+      rowClassName,
+      prefixCls,
+      dataSource,
+      row,
+      handles,
+      disabled,
+    } = this.props;
+
+    this._current = this._current.length === 0 ? dataSource : this._current;
+
     return (
       <div className={classNames(prefixCls, className)} style={style}>
         <div ref={this._sortableGroupDecorator}>
@@ -81,9 +101,8 @@ export default class DraggableList extends React.Component<IDraggableListProps, 
               className={classNames(`${prefixCls}-draggableRow`, rowClassName)}
               style={{
                 cursor: disabled ? 'default' : 'move',
-              }}
-            >
-              {(!disabled) && handles && (<span className={`${prefixCls}-handles`}>&#9776;</span>)}
+              }}>
+              {!disabled && handles && <span className={`${prefixCls}-handles`}>&#9776;</span>}
               {row(record, index)}
             </div>
           ))}
