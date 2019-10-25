@@ -2,13 +2,13 @@ import * as React from 'react';
 import classNames from 'classnames';
 import Sortable from 'sortablejs';
 
-export interface IDraggableListProps {
+export interface IDraggableListProps<T = Object> {
   /** 数据数组 */
-  dataSource: Object[];
+  dataSource: T[];
   /** 数据数组 key 值 */
   rowKey: string;
   /** 数据项 */
-  row: (record: Object, index: number) => React.ReactElement<any>;
+  row: (record: T, index: number) => React.ReactElement<any>;
   /** 是否禁用拖拽 */
   disabled?: boolean;
   /** 是否显示拖拽指示点 */
@@ -16,7 +16,7 @@ export interface IDraggableListProps {
   /** 列表项重排时移动的动画时间 */
   animation?: number;
   /** 列表排序改变的回调 */
-  onUpdate?: (event: Object, dataSource: Object[]) => void;
+  onUpdate?: (event: Object, dataSource: T[]) => void;
 
   /** className */
   className?: string;
@@ -33,7 +33,7 @@ export interface IDraggableListProps {
   prefixCls?: string;
 }
 
-export default class DraggableList extends React.Component<IDraggableListProps, any> {
+export default class DraggableList<T=Object> extends React.Component<IDraggableListProps<T>, any> {
   static defaultProps = {
     disabled: false,
     handles: true,
@@ -41,32 +41,33 @@ export default class DraggableList extends React.Component<IDraggableListProps, 
     prefixCls: 'rc-draggable-list',
   };
 
-  _current = [] as Object[];
+  _current: T[] = [];
 
   _sortableGroupDecorator = (componentBackingInstance) => {
     // check if backing instance not null
-    if (componentBackingInstance) {
-      const { animation, onUpdate, prefixCls, ghostClass, chosenClass, dragClass, disabled } = this.props;
-      // const ghostClass = ;
-      const options = {
-        disabled,
-        animation,
-        draggable: `.${prefixCls}-draggableRow`, // Specifies which items inside the element should be sortable
-        // group: "shared",
-        ghostClass: ghostClass || `${prefixCls}-ghost`, // Class name for the drop placeholder
-        chosenClass: chosenClass || `${prefixCls}-chosen`,  // Class name for the chosen item
-        dragClass: dragClass || `${prefixCls}-drag`,  // Class name for the dragging item
-        onUpdate: (evt) => {
-          const { newIndex, oldIndex } = evt;
-          let updated = this._current;
-          let rowData = updated.splice(oldIndex, 1);
-          updated.splice(newIndex, 0, rowData[0]);
-          this._current = updated;
-          onUpdate && onUpdate(evt, updated);  // tslint:disable-line
-        },
-      };
-      Sortable.create(componentBackingInstance, options);
+    if (!componentBackingInstance) {
+      return;
     }
+    const { animation, onUpdate, prefixCls, ghostClass, chosenClass, dragClass, disabled } = this.props;
+    // const ghostClass = ;
+    const options = {
+      disabled,
+      animation,
+      draggable: `.${prefixCls}-draggableRow`, // Specifies which items inside the element should be sortable
+      // group: "shared",
+      ghostClass: ghostClass || `${prefixCls}-ghost`, // Class name for the drop placeholder
+      chosenClass: chosenClass || `${prefixCls}-chosen`,  // Class name for the chosen item
+      dragClass: dragClass || `${prefixCls}-drag`,  // Class name for the dragging item
+      onUpdate: (evt) => {
+        const { newIndex, oldIndex } = evt;
+        let updated = this._current;
+        let rowData = updated.splice(oldIndex, 1);
+        updated.splice(newIndex, 0, rowData[0]);
+        this._current = updated;
+        onUpdate && onUpdate(evt, updated);  // tslint:disable-line
+      },
+    };
+    Sortable.create(componentBackingInstance, options);
   }
 
   render() {
